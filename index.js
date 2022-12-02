@@ -31,9 +31,9 @@ app.use(passport.session());
 const mongoose = require("mongoose");
 const passportLocalMongoose = require("passport-local-mongoose");
 
-mongoose.connect("mongodb://localhost/MyDatabase", {
-  //   userNewUrlParser: true,
-  //   useUnifiedTopology: true,
+mongoose.connect("mongodb://localhost:27017/MyDatabase", {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
 });
 
 const Schema = mongoose.Schema;
