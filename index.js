@@ -10,6 +10,10 @@ const expressSession = require("express-session")({
   secret: "secret",
   resave: false,
   saveUninitialized: false,
+  cookie: {
+    secure: false,
+    maxAge: 60000,
+  },
 });
 
 app.use(bodyParser.json());
@@ -32,8 +36,8 @@ const mongoose = require("mongoose");
 const passportLocalMongoose = require("passport-local-mongoose");
 
 mongoose.connect("mongodb://localhost:27017/MyDatabase", {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
 });
 
 const Schema = mongoose.Schema;
